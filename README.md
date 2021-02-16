@@ -1,50 +1,55 @@
-# example-app
+# Пример приложения (шаблон) example-app
 
-## Setting up
-Before building a project, create a file  `.gradle/gradle.properties`
-in you HOME directory.
+## 1. Настройка
+Перед созданием проекта создайте файл `.gradle/gradle.properties`
+в ДОМАШНЕЙ директории.
 
-In this file enter the following properties:
+В файле укажите следующие свойства:
 ```
 mavenUser=<you login in Waves Enterprise Nexus>
 mavenPassword=<you password in Waves Enterprise Nexus>
 ```
 
-Then initialize git repository inside the project by doing the following
-commands in project root directory:
+Затем войдите в Docker Registry:
 ```
-git init
-git add .
-git commit -m "Initial commit"
+docker login registry.wavesenterprise.com (затем реквизиты УЗ)
+docker login registry.weintegrator.com (затем реквизиты УЗ)
 ```
 
-## Building (all modules)
-This command will build all modules in the project and publish corresponding
-applications into a docker registry
+(на *-nix Системых дайте нужные права скриптам инициализации БД)
+```
+chmod +x gradlew
+chmod +x docker-compose/config/db/scripts/*.sh
+chmod +x docker-compose/config/db-app/scripts/*.sh
+```
+
+## 2. Сборка (всех модулей)
+Следующая команда соберет докер образы всех проектов в примере
 
 `./gradlew clean dockerTag`
 
-Alternatively run the following command to push all docker images (both applications and smart contracts) to remote docker registry
-`./gradlew clena dockerPush`
+## 3. Импорт в IDE
+В IDEA выберите File -> Open... Затем укажите путь к файлу build.gradle.kts в корне проекта.
+На предложение импортировать как проект ответьте да.
 
-## Running from IDE
-Before you run an application you need to start Decentralized Application Platform with the following command in `docker-compose` directory:
+## 4. Запуск из IDE
+
+Запуск узлов блокчейн: 
+```
+docker-compose -f docker-compose.yml up -d
+```
+
+Запуск плаформы: 
 ```
 docker-compose -f docker-compose-base.yml up -d
 ```
-You also need to either:
- - build a smart contract using `./gradlew dockerTag` command to run contracts locally
- - or deploy (push) a smart contract using `./gradlew dockerPush` command to run contracts remotely
 
-If you're using a local node deployment (docker-compose file) you also need to start you nodes
-by executing `docker-compose -f docker-compose.yml up -d` command in `docker-compose` directory.
-
-Alternatively, if no Decentralized Application Platform are used, you may run just Postgres with the following command:
+Запуск только БД:
 ```
 docker run --name app-pg -d -e POSTGRES_PASSWORD=password -e POSTGRES_USER=postgres -e POSTGRES_DB=db_example_app -p 5432:5432 -d postgres:11.10
 ```
 
-### Pre-existing user names
-During code generation a pre-existing user is created with credentials: `user/user`.
-You can use that user to login into application and make calls to APIs.
-All users are managed via `docker-compose/config/vst-oauth2/user-companies.json` file.
+### Предсозданные пользователи
+Предсозданный пользователь - реквизиты: `user/user`.
+Дополнительные пользователи могут быть заведены в файле:
+`docker-compose/config/vst-oauth2/user-companies.json`.

@@ -1,6 +1,7 @@
-package com.wavesplatform.we.app.example.domain
+package com.wavesplatform.we.app.example.app.domain
 
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType
+import com.wavesplatform.we.app.example.app.domain.BaseEntity.Companion
 import java.time.OffsetDateTime
 import javax.persistence.EntityListeners
 import javax.persistence.MappedSuperclass

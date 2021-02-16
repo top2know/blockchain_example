@@ -1,4 +1,4 @@
-package com.wavesplatform.we.app.example.service
+package com.wavesplatform.we.app.example.app.service
 
 import com.wavesplatform.vst.contract.factory.ContractClientFactory
 import com.wavesplatform.we.app.example.contract.ExampleContract

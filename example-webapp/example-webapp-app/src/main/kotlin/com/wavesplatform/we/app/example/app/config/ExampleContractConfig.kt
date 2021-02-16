@@ -1,4 +1,4 @@
-package com.wavesplatform.we.app.example.config
+package com.wavesplatform.we.app.example.app.config
 
 import com.wavesplatform.we.app.example.contract.ExampleContract
 import com.wavesplatform.we.app.example.contract.impl.ExampleContractImpl

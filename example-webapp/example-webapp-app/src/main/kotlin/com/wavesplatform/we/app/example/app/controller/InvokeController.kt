@@ -1,7 +1,7 @@
-package com.wavesplatform.we.app.example.controller
+package com.wavesplatform.we.app.example.app.controller
 
-import com.wavesplatform.we.app.example.api.TxDto
-import com.wavesplatform.we.app.example.service.ExampleContractService
+import com.wavesplatform.we.app.example.app.api.TxDto
+import com.wavesplatform.we.app.example.app.service.ExampleContractService
 import org.springframework.http.HttpStatus.ACCEPTED
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PathVariable

@@ -1,4 +1,4 @@
-package com.wavesplatform.we.app.example
+package com.wavesplatform.we.app.example.app
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

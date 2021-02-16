@@ -1,4 +1,4 @@
-package com.wavesplatform.we.app.example
+package com.wavesplatform.we.app.example.app
 
 import com.wavesplatform.vst.security.commons.OAuth2TokenSupport
 import org.junit.jupiter.api.Test
