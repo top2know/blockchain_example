@@ -105,7 +105,7 @@ contracts:
   config:
     example:
       image: registry.wavesenterprise.com/example-sc/example-contract-app
-      imageHash: 773621a75e68bb583b45c1c23a076f75baf6690be2cd883d4c47de15e8424c65
+      imageHash: 1ccf3e9e772f2a788b7ecb981403a49fe8365402cb7a31d181b1dfe1aa870fcf
 
 node:
   config:

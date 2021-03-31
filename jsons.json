@@ -1,0 +1,17 @@
+{
+  "fee": 0,
+  "image": "registry.wavesenterprise.com/example-sc/example-contract-app:1.0.0-SNAPSHOT-20210331033136-4eb61a8.dirty",
+  "imageHash": "8f24c8d4e453bcb99df858ef7761582e58dbd260a417ea6158aaf51880e73f57",
+  "contractName": "my-first-contract",
+  "sender": "3QVUnXdCq7vMJDjfcuM7G5qCqFKeBQuac8P",
+  "password": "9P90mwgUMc7VbnfH",
+  "params": [
+    {
+      "key": "action",
+      "type": "string",
+      "value": "create"
+    }
+  ],
+  "type": 103,
+  "version": 2
+}
